@@ -1,4 +1,4 @@
-# Gecko Fuzz 🦎
+# Gecko Fuzz 
 
 # 🦎 Introduction
 Gecko is a DAO leveraging crowd-sourced computation power to achieve **fast**, **accurate** and **cheap** auomated auditing on the Solana network, through a decentralised fuzzing infrastructure. 
