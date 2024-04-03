@@ -1,2 +1,12 @@
-# GeckoFuzz
-Submission for Solana Colosseum Renaissance Hackathon
+# Gecko Fuzz
+Gecko is a DAO leveraging crowd-sourced computation power to achieve **fast**, **accurate** and **cheap** auomated auditing on the Solana network.
+
+The importance of auditing has grown significantly in recent years as organizations strive to ensure the integrity and security of their systems. However, despite the importance of auditing, it remains challenging, with many auditing companies struggling to provide comprehensive and accurate reports.
+
+The use of human auditors by auditing firms presents several challenges, including the high costs of recruiting and training qualified personnel and the potential for human error. With the increasing complexity of software systems and the growing volume of data to be analyzed, manual audits can become increasingly time-consuming and error-prone. On the other hand, automated auditing solutions also present their own set of challenges. These solutions typically require high computational power and incur high running time overhead. Thus, many traditional automated auditing tools sacrifice completeness and soundness of the analysis for faster response time, resulting in both false negative and positive results.
+
+In contrast, Gecko aims to parallelize novel automated program analysis techniques to gain accurate results in a reasonable amount of time. To achieve high parallelism with low costs, the Gecko Fuzz platform allows the public to contribute computation power to accomplish the automated auditing in return for token rewards. In the meantime, all the program analysis intermediate statistics and waypoints are verified and stored on Solana, which can finally be leveraged to mint the auditing reports.
+
+Unlike traditional collaborative manual auditing platforms Gecko uses sound automated program analysis (e.g., fuzzing and symbolic execution) techniques to provide accurate auditing reports. Since the program analysis results and intermediate waypoints can be easily verified through a fully automated oracle, the manual confirmation process is no longer needed. While it is impossible to quantify the performance of human auditors, Gecko can quantify the auditing progress and completeness of auditing reports based on metrics backed with on-chain data.
+
+The Gecko platform can offer two key benefits to the ecosystem. Firstly, it allows Solana developers to to access low-cost, highly accurate auditing reports for their projects with on-chain guarantees. Secondly ...
