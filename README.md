@@ -22,11 +22,11 @@ To determine the difficulty of exploring each edge in the CFG, we utilize static
 
 For instance, consider following simple program:
 
-''' rust
+``` rust
 // input: Vec<u8>
 if (input[0] > 20) { // Line 1
     bug(); // Line 2
 } // Line 3
-'''
+```
 
 
