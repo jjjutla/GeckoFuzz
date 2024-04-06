@@ -4,7 +4,7 @@ Gecko is a DAO leveraging crowd-sourced computation power to achieveÂ **fast**,Â
 
 [IMG]
 
-
+## Overview
 The importance of auditing has grown significantly in recent years as organizations strive to ensure the integrity and security of their systems. However, despite the importance of auditing, it remains challenging, with many auditing companies struggling to provide comprehensive and accurate reports.
 
 The use of human auditors by auditing firms presents several challenges, including the high costs of recruiting and training qualified personnel and the potential for human error. With the increasing complexity of software systems and the growing volume of data to be analyzed, manual audits can become increasingly time-consuming and error-prone. On the other hand, automated auditing solutions also present their own set of challenges. These solutions typically require high computational power and incur high running time overhead. Thus, many traditional automated auditing tools sacrifice completeness and soundness of the analysis for faster response time, resulting in both false negative and positive results.
@@ -16,7 +16,11 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 The Gecko platform can offer two key benefits to the ecosystem. Firstly, it allows Solana developers to to access low-cost, highly accurate auditing reports for their projects with on-chain guarantees. Secondly ...
 
 
-# Technical Details
+## Project Details
+
+
+
+## Technical Details
 ### Partitioning Plan Synthesis
 By converting a program into LLVM bytecode, we can create a weighted control flow graph (CFG) of it with the weight of each edge as relative difficulty of exploring such an edge. Graph partitioning algorithms can then partition the CFG into sub-trees, with the starting node of the CFG as the root of each tree. The partition plan can be concisely represented in O(log n) bytes, where `n` is the size of the CFG, making it possible to be fit into an on-chain variable.
 
