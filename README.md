@@ -64,7 +64,7 @@ The CFG would be:
 
 Given `u8` domain is 256, weight (exploration difficulty) of E1 is `(256 - 20) / (256 + 20)` and `E2` is `(256 + 20) / (256 - 20)`. By intuition, E2 is indeed more likely to be explored than E1. As there is no comparison instruction in during transition of E3, the exploration difficulty is 0, meaning as long as we can reach Line 2, we can reach Line 3.
 
-### Dynamic Program Anannslusi (DPA)
+### Dynamic Program Analysis (DPA)
 Gecko compiles the Solana contract into LLVM bytecode and leverages fuzz testing techniques, which involve sending random input to the program. This method, also known as heuristic search, aims to achieve 100% code coverage and uncover all vulnerabilities. While infinite time would guarantee zero false negatives, we use formal methods such as symbolic and concolic execution for guiding the fuzz testing search to reduce the time needed. Additionally, by partitioning the program into smaller, more manageable subprograms for each node, we can reduce the time required linearly as the number of nodes increases.
 
 Fuzz testing employs partitioning through the use of an instrumented target. If an input causes execution of code outside the partition plan, the target will terminate. Early termination reduces the time spent exploring code not within the partition, saving significant time. Similarly, symbolic and concolic execution can also conduct early-termination to avoid exploring code outside the partition.
