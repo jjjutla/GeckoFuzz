@@ -4,7 +4,7 @@ Gecko is a DAO leveraging crowd-sourced computation power to achieveÂ **fast**,Â
 
 [IMG]
 
-## Overview
+# Overview
 The importance of auditing has grown significantly in recent years as organizations strive to ensure the integrity and security of their systems. However, despite the importance of auditing, it remains challenging, with many auditing companies struggling to provide comprehensive and accurate reports.
 
 The use of human auditors by auditing firms presents several challenges, including the high costs of recruiting and training qualified personnel and the potential for human error. With the increasing complexity of software systems and the growing volume of data to be analyzed, manual audits can become increasingly time-consuming and error-prone. On the other hand, automated auditing solutions also present their own set of challenges. These solutions typically require high computational power and incur high running time overhead. Thus, many traditional automated auditing tools sacrifice completeness and soundness of the analysis for faster response time, resulting in both false negative and positive results.
@@ -16,11 +16,22 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 The Gecko platform can offer two key benefits to the ecosystem. Firstly, it allows Solana developers to to access low-cost, highly accurate auditing reports for their projects with on-chain guarantees. Secondly ...
 
 
-## Project Details
+# Project Details
+### Stakeholders
+- Project Owners: Anyone who needs an audit for their contract.
+- Validator Nodes (Judges): To verify the auditing information (how does this work)?
+- Aduditor Nodes: (wardens): Anyone can run a nodes on their computers or even inside browsers to supply computation power for program analysis in return of token rewards.
+
+### Workflow
+0. Project owner can create an auditing request by staking tokens as bounties and providing the compiled program.
+1. The program being audited is divided into smaller subprograms of equal exploring complexity using static analysis by validator nodes. Each node is assigned a unique subprogram to audit for a specific period. This process, known as partitioning, is extremely fast and helps prevent auditor nodes from wasting computational power on code other nodes have already explored. The partitioning plan is deterministic and can be easily verified by other validator nodes, reaching consensus among all validator nodes before the auditing campaign begins.
+2. Each auditor nodes pick up a specific partition in the partitioning plan minted based on weighted sampling. Then, auditor nodes leverage fuzz testing techniques to analyze their subprogram. Auditor nodes are incentivized to prioritize auditing requests that are new, have high program complexity, and offer higher rewards. This is because auditor nodes are motivated to find more test cases that lead to vulnerabilities and new coverage.
+3. When auditor nodes detect a test case leading to vulnerability or new code coverage, they mint an NFT for the test case. Judge nodes then verify the test case by re-executing it. Since the execution is deterministic, the outcome must also be deterministic, allowing validator nodes to reach consensus about the validity of test case NFTs.
+4. Project owner can terminate an audit request. The termination requests also mint an NFT for an auditing report automatically based on the intermediate statistics, test cases, and vulnerabilities. A reward (i.e., bounties) is then given to the validator nodes and auditor nodes that generated or verified the test case NFTs.
 
 
 
-## Technical Details
+# Technical Details
 ### Partitioning Plan Synthesis
 By converting a program into LLVM bytecode, we can create a weighted control flow graph (CFG) of it with the weight of each edge as relative difficulty of exploring such an edge. Graph partitioning algorithms can then partition the CFG into sub-trees, with the starting node of the CFG as the root of each tree. The partition plan can be concisely represented in O(log n) bytes, where `n` is the size of the CFG, making it possible to be fit into an on-chain variable.
 
