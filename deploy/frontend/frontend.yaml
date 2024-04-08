@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "frontend"
+  namespace: "default"
+  labels:
+    app: "frontend"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "frontend"
+  template:
+    metadata:
+      labels:
+        app: "frontend"
+    spec:
+      containers:
+        - name: "frontend-sha256-1"
+          image: "gcr.io/fuzzland/frontend:REPLACE_ME_HASH"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "frontend-hpa-vu2w"
+  namespace: "default"
+  labels:
+    app: "frontend"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "frontend"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

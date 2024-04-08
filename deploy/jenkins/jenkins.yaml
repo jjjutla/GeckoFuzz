@@ -1,0 +1,26 @@
+---
+apiVersion: "v1"
+kind: "Namespace"
+metadata:
+  name: "builder"
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "jenkins"
+  namespace: "builder"
+  labels:
+    app: "jenkins"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "jenkins"
+  template:
+    metadata:
+      labels:
+        app: "jenkins"
+    spec:
+      containers:
+        - name: "jenkins-sha256-1"
+          image: "gcr.io/fuzzland/jenkins@sha256:54c27168e1b1f92c456dd95306baa7e2ad17c753d0be4c8cb28646ab2c5bfa2a"

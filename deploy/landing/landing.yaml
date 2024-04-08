@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "landing"
+  namespace: "default"
+  labels:
+    app: "landing"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "landing"
+  template:
+    metadata:
+      labels:
+        app: "landing"
+    spec:
+      containers:
+        - name: "landing-sha256-1"
+          image: "gcr.io/fuzzland/landing:REPLACE_ME_HASH"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "landing-hpa-vu2w"
+  namespace: "default"
+  labels:
+    app: "landing"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "landing"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

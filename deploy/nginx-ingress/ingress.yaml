@@ -1,0 +1,81 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-resource
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/issuer: letsencrypt-production
+spec:
+  tls:
+    - secretName: web-ssl
+      hosts:
+        - "fuzz.land"
+        - "www.fuzz.land"
+        - "stg.fuzz.land"
+        - "stats-api.dev.fuzz.land"
+        - "dev.fuzz.land"
+        - "ipfs.dev.fuzz.land"
+        - "pricing-api.dev.fuzz.land"
+        - "landing.dev.fuzz.land"
+  rules:
+    - host: "stats-api.dev.fuzz.land"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: stats-backend
+                port:
+                  number: 4001
+    - host: "dev.fuzz.land"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 3000
+    - host: "stg.fuzz.land"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 3000
+    - host: "ipfs.dev.fuzz.land"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: ipfs-gateway
+                port:
+                  number: 4000
+    - host: "pricing-api.dev.fuzz.land"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: price-estimator
+                port:
+                  number: 4001
+    - host: "landing.dev.fuzz.land"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: landing
+                port:
+                  number: 3000

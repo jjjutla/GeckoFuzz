@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "price-estimator"
+  namespace: "default"
+  labels:
+    app: "price-estimator"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "price-estimator"
+  template:
+    metadata:
+      labels:
+        app: "price-estimator"
+    spec:
+      containers:
+        - name: "price-estimator-sha256-1"
+          image: "gcr.io/fuzzland/price-estimator:REPLACE_ME_HASH"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "price-estimator-hpa-vu2w"
+  namespace: "default"
+  labels:
+    app: "price-estimator"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "price-estimator"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

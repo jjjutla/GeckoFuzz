@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "stats-backend"
+  namespace: "default"
+  labels:
+    app: "stats-backend"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "stats-backend"
+  template:
+    metadata:
+      labels:
+        app: "stats-backend"
+    spec:
+      containers:
+        - name: "stats-backend-sha256-1"
+          image: "gcr.io/fuzzland/stats-backend:REPLACE_ME_HASH"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "stats-backend-hpa-vu2w"
+  namespace: "default"
+  labels:
+    app: "stats-backend"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "stats-backend"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

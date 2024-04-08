@@ -1,0 +1,18 @@
+syntax = "proto3";
+ message HeartbeatReq {
+     string public_key = 1;
+     string project_id = 2;
+     int32 allocated_cores = 3;
+     int32 allocated_mem = 4;
+     uint64 timestamp = 5;
+     uint64 lasting = 6;
+     string signature = 7;
+ }
+
+message HeartbeatResp {
+  uint32 status = 1;
+}
+
+service HeartbeatService {
+  rpc Heartbeat(HeartbeatReq) returns (HeartbeatResp) {}
+}

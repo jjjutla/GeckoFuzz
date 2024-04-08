@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "telemetry-backend"
+  namespace: "default"
+  labels:
+    app: "telemetry-backend"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "telemetry-backend"
+  template:
+    metadata:
+      labels:
+        app: "telemetry-backend"
+    spec:
+      containers:
+        - name: "telemetry-backend-sha256-1"
+          image: "gcr.io/fuzzland/telemetry-backend:REPLACE_ME_HASH"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "telemetry-backend-hpa-vu2w"
+  namespace: "default"
+  labels:
+    app: "telemetry-backend"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "telemetry-backend"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

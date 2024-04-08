@@ -1,0 +1,41 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "ipfs-gateway"
+  namespace: "default"
+  labels:
+    app: "ipfs-gateway"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "ipfs-gateway"
+  template:
+    metadata:
+      labels:
+        app: "ipfs-gateway"
+    spec:
+      containers:
+        - name: "ipfs-gateway-sha256-1"
+          image: "gcr.io/fuzzland/ipfs-gateway:REPLACE_ME_HASH"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "ipfs-gateway-hpa-vu2w"
+  namespace: "default"
+  labels:
+    app: "ipfs-gateway"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "ipfs-gateway"
+    apiVersion: "apps/v1"
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+enum Source {
+    SOURCE_ONBOARDING = 0;
+    SOURCE_MINER = 1;
+}
+
+message SubmitReq {
+  string public_key = 1;
+  string project_id = 2;
+  string cid = 3;
+  string dag = 4;
+  string signature = 5;
+  Source source = 6;
+}
+
+message Testcase {
+  string id = 1;
+  string dag = 2;
+  string cid = 3;
+  int32 power = 4;
+}
+
+message GetReq {
+  string project_id = 1;
+  int32 from = 2;
+}
+
+message GetResp {
+  repeated Testcase testcases = 1;
+  uint32 status = 2;
+}
+
+message VoteReq {
+  string public_key = 1;
+  string testcase_id = 2;
+  bool vote = 3;
+  string signature = 4;
+}
+
+message TestcaseResp {
+  uint32 status = 1;
+}
+
+service TestcaseService {
+  rpc Submit(SubmitReq) returns (TestcaseResp) {}
+  rpc Vote(VoteReq) returns (TestcaseResp) {}
+  rpc Get(GetReq) returns (GetResp) {}
+}

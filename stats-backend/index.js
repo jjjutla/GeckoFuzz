@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const Protocol = require("../contracts/protocols/protocol")
-const VVulns = require("../contracts/protocols/vvulns")
-const {HeartbeatDB, InitDB} = require("../db-schema/db")
+const Protocol = require("../../protocol_v1/contracts/protocols/protocol")
+const VVulns = require("../../protocol_v1/contracts/protocols/vvulns")
+const {HeartbeatDB, InitDB} = require("../../protocol_v1/db-schema/db")
 const app = express()
 const port = process.env.PORT || 4001;
 const bodyParser = require('body-parser');
-const {protocol_address, token_address, vvuln_address, RPC_ADDRESS,  START_FETCH_BLOCK, MAX_PER_FETCH} = require("../const")
+const {protocol_address, token_address, vvuln_address, RPC_ADDRESS,  START_FETCH_BLOCK, MAX_PER_FETCH} = require("../../protocol_v1/const")
 const Web3 = require("web3")
 const fs = require("fs");
 
@@ -24,8 +24,10 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
+
 all_projects = {}
 all_vulns = {}
+
 block_to_ts = {}
 let lastBlock = {};
 
@@ -39,12 +41,15 @@ const fetch_timestamp_from_block = async (b) => {
 }
 
 const max = (a, b) => a > b ? a : b;
+
 w3 = new Web3(new Web3.providers.HttpProvider(RPC_ADDRESS));
+
 const time_skip = 100
 
 const cap_time = (t) => {
     return parseInt(t / time_skip) * time_skip
 }
+
 
 const get_past_event = async (obj, name, cb) => {
     // get latest block
@@ -74,6 +79,7 @@ const collector = async () => {
     for (let i = 0; i < await protocol.GetProjectCount(); i++) {
         console.log("collecting project", i)
         all_projects[i] = Object.assign({}, all_projects[i] || {}, await protocol.GetProjectInfo(i));
+
         await HeartbeatDB.findAll({
             where: {
                 projectId: i
@@ -100,6 +106,8 @@ const collector = async () => {
                 }
             })
         })
+
+
     }
     // for (let i = 0; i < await vvulns.nonce(); i++) {
     //     const projectId = await vvulns.projectId(i);
@@ -118,9 +126,12 @@ const collector = async () => {
         async (err, events) => {
             if (err !== null) {
                 console.log(err)
+
                 process.exit(-1)
             }
+
             console.log(`got ${events.length} events`)
+
             for (let i = 0; i < events.length; i++) {
                 const event = events[i];
                 if (event.event === "ProjectDeployed") {
@@ -150,7 +161,9 @@ const collector = async () => {
                 console.log(err)
                 process.exit(-1)
             }
+
             console.log(`got ${events.length} vvulns events`)
+
             for (let i = 0; i < events.length; i++) {
                 const event = events[i];
                 if (event.event === "Minted") {
@@ -173,7 +186,12 @@ const collector = async () => {
                 }
                 lastBlock["vvulns"] = max(lastBlock["vvulns"] || 0, event.blockNumber);
             }
+
     });
+
+
+
+
 }
 
 app.get('/projects', async (req, res) => {
@@ -187,6 +205,7 @@ app.get('/project/:id', async (req, res) => {
 app.get('/vulnerability/:id', async (req, res) => {
     return res.send(all_vulns[req.params.id]);
 })
+
 
 app.listen(port, async () => {
     console.log(`stats gateway listening on port ${port}`);
