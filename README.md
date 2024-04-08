@@ -91,6 +91,6 @@ Verifying partition plans and interesting test cases can be costly or even impos
 - UI Redesign
 
 ### Coming Soon
-<img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/a461800a-4bd6-4e65-896b-b45924ce944f" width="120%">
+<img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/a461800a-4bd6-4e65-896b-b45924ce944f" width="200%">
 
 
