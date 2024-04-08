@@ -5,6 +5,8 @@ Gecko is a DAO leveraging crowd-sourced computation power to achieveÂ **fast**,Â
 
 As Solana's first formal verification assisted fuzzer it eliminates manual effort by removing the need for users to write invariants or specify input generation strategies. Users simply provide compiled contracts and Gecko autonomously detects and generates exploits for any vulnerabilities found.
 
+FuzzLand is a decentralized protocol for automated auditing. It allows anyone to audit any project by contributing computing power. The auditors are rewarded with $FUZL tokens.
+
 [IMG]
 
 # Overview
