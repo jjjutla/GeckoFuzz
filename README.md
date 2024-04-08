@@ -18,6 +18,10 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 
 
 # Project Details
+### Main Contributions
+
+
+
 ### Stakeholders
 - Project Owners: Anyone who needs an audit for their contract.
 - Validator Nodes (Judges): To verify the auditing information (how does this work)?
