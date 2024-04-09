@@ -17,14 +17,14 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 
 # Images
 
-<img width="50%" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/5690840b-4d10-4fda-a276-3392fa2d6e66">
-<img width="50%" alt="2" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/fc06f7b6-348b-4457-9174-3a752a992808">
-<img width="50%" alt="3" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/bb4b64c7-4e9b-4153-b0cc-314c93a83498">
-<img width="50%" alt="5" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/f6e0edcf-ecdb-45cf-9457-f62faae1a01b">
-<img width="50%" alt="6" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/57c53324-96c1-4bea-8856-36730f037490">
-<img width="50%" alt="7" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/ce137338-bd63-4c91-80b2-9aa0c870afa1">
-<img width="50%" alt="8" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/6dcbe2a9-e4c5-432f-bd93-b629470d8e3f">
-<img width="50%" alt="9" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/3117729d-2069-425b-9f75-c901928bbf5c">
+<img width="48%" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/5690840b-4d10-4fda-a276-3392fa2d6e66">
+<img width="48%" alt="2" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/fc06f7b6-348b-4457-9174-3a752a992808">
+<img width="48%" alt="3" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/bb4b64c7-4e9b-4153-b0cc-314c93a83498">
+<img width="48%" alt="5" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/f6e0edcf-ecdb-45cf-9457-f62faae1a01b">
+<img width="48%" alt="6" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/57c53324-96c1-4bea-8856-36730f037490">
+<img width="48%" alt="7" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/ce137338-bd63-4c91-80b2-9aa0c870afa1">
+<img width="48%" alt="8" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/6dcbe2a9-e4c5-432f-bd93-b629470d8e3f">
+<img width="48%" alt="9" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/3117729d-2069-425b-9f75-c901928bbf5c">
 
 
 
