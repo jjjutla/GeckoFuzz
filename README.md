@@ -32,7 +32,8 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 
 ### Workflow
 
-<img width="1481" alt="4" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/b47f65d6-3efb-4de2-8af3-19a279c44a5e">
+![4](https://github.com/jjjutla/GeckoFuzz/assets/22000925/cabbdf7f-2620-4389-b1bc-a298c2a9d248)
+
 
 
 0. Project owner can create an auditing request by staking tokens as bounties and providing the compiled program.
