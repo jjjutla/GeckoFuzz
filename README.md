@@ -15,6 +15,9 @@ Gecko aims to parallelize novel automated program analysis techniques to gain ac
 
 Unlike traditional collaborative manual auditing platforms Gecko uses sound automated program analysis (e.g., fuzzing and symbolic execution) techniques to provide accurate auditing reports. Since the program analysis results and intermediate waypoints can be easily verified through a fully automated oracle, the manual confirmation process is no longer needed. Gecko can quantify the auditing progress and completeness of auditing reports based on metrics backed with on-chain data.
 
+- **3-min Demo & Pitch:** https://youtu.be/G0KEAc0JpWA
+- **Twitter:** https://twitter.com/GeckoFuzzer
+
 # Images
 
 <img width="49%" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/5690840b-4d10-4fda-a276-3392fa2d6e66">
