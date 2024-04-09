@@ -16,6 +16,7 @@ Gecko aims to parallelize novel automated program analysis techniques to gain ac
 
 Unlike traditional collaborative manual auditing platforms Gecko uses sound automated program analysis (e.g., fuzzing and symbolic execution) techniques to provide accurate auditing reports. Since the program analysis results and intermediate waypoints can be easily verified through a fully automated oracle, the manual confirmation process is no longer needed. Gecko can quantify the auditing progress and completeness of auditing reports based on metrics backed with on-chain data.
 
+# Images
 
 
 
@@ -30,6 +31,10 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 - Aduditor Nodes: (wardens): Anyone can run a nodes on their computers or even inside browsers to supply computation power for program analysis in return of token rewards.
 
 ### Workflow
+
+<img width="1481" alt="4" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/b47f65d6-3efb-4de2-8af3-19a279c44a5e">
+
+
 0. Project owner can create an auditing request by staking tokens as bounties and providing the compiled program.
 1. The program being audited is divided into smaller subprograms of equal size exploring complexity using static analysis by validator nodes. Each node is assigned a unique subprogram to audit for a specific period. This process, known as partitioning, is extremely fast and helps prevent auditor nodes from wasting computational power on code other nodes have already explored. The partitioning plan is deterministic and can be easily verified by other validator nodes, reaching consensus among all validator nodes before the auditing campaign begins.
 2. Each auditor nodes pick up a specific partition in the partitioning plan minted based on weighted sampling. Then, auditor nodes leverage fuzz testing techniques to analyze their subprogram. Auditor nodes are incentivized to prioritize auditing requests that are new, have high program complexity, and offer higher rewards. This is because auditor nodes are motivated to find more test cases that lead to vulnerabilities and new coverage.
