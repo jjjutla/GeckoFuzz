@@ -41,6 +41,7 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 ### Workflow
 
 ![4](https://github.com/jjjutla/GeckoFuzz/assets/22000925/cabbdf7f-2620-4389-b1bc-a298c2a9d248)
+
 0. Project owners can start audits by staking tokens and submitting their compiled program. 
 1. Validator nodes use static analysis to break the program into smaller, equally complex subprograms for auditing.
 2. Auditor nodes are incentivized by rewards and select partitions using weighted sampling and employ fuzz testing to identify vulnerabilities or new coverage.
