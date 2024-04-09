@@ -9,12 +9,9 @@ COPY ./contracts/protocols/ /app/contracts/protocols/
 COPY ./contracts/builds/ /app/contracts/builds/
 COPY ./const.js /app/
 
-
 FROM node_base
 
-WORKDIR /app/ethereumjs-monorepo
 
-COPY ethereumjs-monorepo /app/ethereumjs-monorepo
 RUN npm i
 RUN npm run build --workspaces
 

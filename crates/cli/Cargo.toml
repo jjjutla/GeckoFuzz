@@ -1,0 +1,15 @@
+[package]
+name = "gecko-cli"
+version = "0.5.0"
+edition = "2021"
+repository = "https://github.com/jjjutla/GeckoFuzz"
+license-file = "../../LICENSE"
+readme = "../../README.md"
+[dependencies]
+clap                = { workspace = true }
+tokio               = { workspace = true }
+anyhow              = { workspace = true }
+fehler              = { workspace = true }
+solana-sdk          = { workspace = true }
+gecko-client     = { workspace = true }
+gecko-explorer   = { workspace = true }

@@ -1,16 +1,12 @@
-import {Blockchain} from '@ethereumjs/blockchain'
-import {Chain, Common, Hardfork} from '@ethereumjs/common'
-import {EEIInterface, EVM} from '@ethereumjs/evm'
-import {AccountFields, StateManager} from '@ethereumjs/statemanager'
-import {EEI} from '@ethereumjs/vm'
-import {Account, Address, bufferToBigInt} from "@ethereumjs/util";
+import * as solanaWeb3 from '@solana/web3.js';
+import * as fs from "fs";
+import * as prompt from "prompt-sync";
+import * as os from "os";
 
-import {get_EVM, get_shared_dag, reset_shared_dag} from "../utils/evm";
 import * as fs from "fs";
 import Web3 from "web3"
 // @ts-ignore
 import * as prompt from "prompt-sync";
-import {StorageDump} from "@ethereumjs/statemanager/src/interface";
 
 
 let web3 = new Web3();

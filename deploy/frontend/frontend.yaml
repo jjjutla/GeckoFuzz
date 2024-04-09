@@ -15,10 +15,6 @@ spec:
     metadata:
       labels:
         app: "frontend"
-    spec:
-      containers:
-        - name: "frontend-sha256-1"
-          image: "gcr.io/fuzzland/frontend:REPLACE_ME_HASH"
 ---
 apiVersion: "autoscaling/v2beta1"
 kind: "HorizontalPodAutoscaler"

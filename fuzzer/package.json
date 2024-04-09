@@ -1,35 +1,19 @@
 {
-  "name": "lightfuzz",
-  "version": "1.0.0",
-  "description": "Contract fuzzer",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "dependencies": {
-    "@ethereumjs/blockchain": "file:../ethereumjs-monorepo/packages/blockchain",
-    "@ethereumjs/common": "file:../ethereumjs-monorepo/packages/common",
-    "@ethereumjs/evm": "file:../ethereumjs-monorepo/packages/evm",
-    "@ethereumjs/statemanager": "file:../ethereumjs-monorepo/packages/statemanager",
-    "@ethereumjs/trie": "file:../ethereumjs-monorepo/packages/trie",
-    "@ethereumjs/util": "file:../ethereumjs-monorepo/packages/util",
-    "@ethereumjs/vm": "file:../ethereumjs-monorepo/packages/vm",
-    "@types/async-eventemitter": "^0.2.1",
-    "async-eventemitter": "^0.2.4",
-    "debug": "^4.3.3",
-    "ethereum-cryptography": "^1.1.2",
-    "ipfs-http-client": "^56.0.2",
-    "mcl-wasm": "^0.7.1",
-    "multiprocessing": "^1.2.0",
-    "node-fetch": "^2.6.7",
-    "rustbn.js": "~0.2.0",
-    "ts-node": "^10.9.1",
-    "web3": "^1.8.0",
-    "yargs": "^17.5.1"
-  },
-  "engines": {
-    "node": ">=14"
-  }
+    "scripts": {
+        "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+        "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
+    },
+    "dependencies": {
+        "@coral-xyz/anchor": "^0.28.0"
+    },
+    "devDependencies": {
+        "chai": "^4.3.4",
+        "mocha": "^9.0.3",
+        "ts-mocha": "^10.0.0",
+        "@types/bn.js": "^5.1.0",
+        "@types/chai": "^4.3.0",
+        "@types/mocha": "^9.0.0",
+        "typescript": "^4.3.5",
+        "prettier": "^2.6.2"
+    }
 }
