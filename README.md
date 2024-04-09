@@ -6,12 +6,7 @@ Gecko is a DAO on the Solana network, which uses crowd-sourced computing for  *
   <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/0a7b965d-8c04-41ea-8065-40d431270dc0" width="26%" height="26%">
 </p>
 
-
-
 As Solana's first formal verification assisted fuzzer it eliminates manual effort by removing the need for users to write invariants or specify input generation strategies. Users simply provide compiled contracts and Gecko autonomously detects and generates exploits for any vulnerabilities found.
-
-
-[IMG]
 
 # Overview
 The importance of auditing has grown significantly in recent years as organisazations strive to ensure the security of their systems, however this has remained a challenging task as many companies struggle to find meaningful vulnearbilities and provide comprehensive and accurate reports. The use of human auditors presents several challenges, including the high costs of recruiting and training qualified personnel and the potential for human error. With the increasing complexity of software systems and the growing volume of data to be analyzed, manual audits can become increasingly time-consuming and error-prone. Likewise automated auditing solutions also present their own set of challenges. They typically require high computational power and incur high running time overhead and many tools sacrifice completeness and soundness of the analysis for faster response time, resulting in both false negative and positive results.
@@ -22,6 +17,9 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 
 # Images
 
+<img width="1509" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/33a7799c-3d9a-4c3f-b086-d888f18e1903">
+![2](https://github.com/jjjutla/GeckoFuzz/assets/22000925/fc06f7b6-348b-4457-9174-3a752a992808)
+![3](https://github.com/jjjutla/GeckoFuzz/assets/22000925/bb4b64c7-4e9b-4153-b0cc-314c93a83498)
 
 
 # Project Details
