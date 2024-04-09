@@ -2,12 +2,11 @@
 
 Gecko is a DAO on the Solana network, which uses crowd-sourced computing for  **fast**, **accurate** and **cheap** automated auditing through a decentralised fuzzing infrastructure.
 
+<p align="center">
+  <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/0a7b965d-8c04-41ea-8065-40d431270dc0" width="26%" height="26%">
+</p>
 
 As Solana's first formal verification assisted fuzzer it eliminates manual effort by removing the need for users to write invariants or specify input generation strategies. Users simply provide compiled contracts and Gecko autonomously detects and generates exploits for any vulnerabilities found.
-
-Gecko is a decentralized protocol for automated auditing. It allows anyone to audit any project by contributing computing power. The auditors are rewarded with $FUZL tokens.
-
-[IMG]
 
 # Overview
 The importance of auditing has grown significantly in recent years as organisazations strive to ensure the security of their systems, however this has remained a challenging task as many companies struggle to find meaningful vulnearbilities and provide comprehensive and accurate reports. The use of human auditors presents several challenges, including the high costs of recruiting and training qualified personnel and the potential for human error. With the increasing complexity of software systems and the growing volume of data to be analyzed, manual audits can become increasingly time-consuming and error-prone. Likewise automated auditing solutions also present their own set of challenges. They typically require high computational power and incur high running time overhead and many tools sacrifice completeness and soundness of the analysis for faster response time, resulting in both false negative and positive results.
@@ -15,6 +14,19 @@ The importance of auditing has grown significantly in recent years as organisaza
 Gecko aims to parallelize novel automated program analysis techniques to gain accurate results in a reasonable amount of time. To achieve high parallelism with low costs, the Gecko Fuzz platform allows the public to contribute computation power to accomplish the automated auditing in return for token rewards. In the meantime, all the program analysis intermediate statistics and waypoints are verified and stored on Solana, which can finally be leveraged to mint the auditing reports.
 
 Unlike traditional collaborative manual auditing platforms Gecko uses sound automated program analysis (e.g., fuzzing and symbolic execution) techniques to provide accurate auditing reports. Since the program analysis results and intermediate waypoints can be easily verified through a fully automated oracle, the manual confirmation process is no longer needed. Gecko can quantify the auditing progress and completeness of auditing reports based on metrics backed with on-chain data.
+
+# Images
+
+<img width="49%" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/5690840b-4d10-4fda-a276-3392fa2d6e66">
+<img width="49%" alt="2" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/fc06f7b6-348b-4457-9174-3a752a992808">
+<img width="49%" alt="3" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/bb4b64c7-4e9b-4153-b0cc-314c93a83498">
+<img width="49%" alt="5" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/f6e0edcf-ecdb-45cf-9457-f62faae1a01b">
+<img width="49%" alt="6" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/57c53324-96c1-4bea-8856-36730f037490">
+<img width="49%" alt="7" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/ce137338-bd63-4c91-80b2-9aa0c870afa1">
+<img width="49%" alt="8" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/6dcbe2a9-e4c5-432f-bd93-b629470d8e3f">
+<img width="49%" alt="9" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/3117729d-2069-425b-9f75-c901928bbf5c">
+
+
 
 
 
@@ -30,6 +42,11 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 - Aduditor Nodes: (wardens): Anyone can run a nodes on their computers or even inside browsers to supply computation power for program analysis in return of token rewards.
 
 ### Workflow
+
+![4](https://github.com/jjjutla/GeckoFuzz/assets/22000925/cabbdf7f-2620-4389-b1bc-a298c2a9d248)
+
+
+
 0. Project owner can create an auditing request by staking tokens as bounties and providing the compiled program.
 1. The program being audited is divided into smaller subprograms of equal size exploring complexity using static analysis by validator nodes. Each node is assigned a unique subprogram to audit for a specific period. This process, known as partitioning, is extremely fast and helps prevent auditor nodes from wasting computational power on code other nodes have already explored. The partitioning plan is deterministic and can be easily verified by other validator nodes, reaching consensus among all validator nodes before the auditing campaign begins.
 2. Each auditor nodes pick up a specific partition in the partitioning plan minted based on weighted sampling. Then, auditor nodes leverage fuzz testing techniques to analyze their subprogram. Auditor nodes are incentivized to prioritize auditing requests that are new, have high program complexity, and offer higher rewards. This is because auditor nodes are motivated to find more test cases that lead to vulnerabilities and new coverage.
@@ -83,7 +100,7 @@ Verifying partition plans and interesting test cases can be costly or even impos
 
 **Interactively Testcase Verification:** Claimer can confirm a test case by submitting the execution trace (a trace of basic blocks hit during execution) of the test case to the chain. The initial fraud-proof consists of the first differing program counter (PC) in execution trace and the state (i.e., dirty page of the memory and stack) before the differing PC. The challenged claimer can dispute the state and find the first differing state interactively with the challenger. When either the differing PC or state is found, the chain will re-execute partially from the state and PC with consensus (i.e., state and PC before the differing ones) using LLVM bytecode virtual machine. Since the execution would lead to a concrete result that is directly equal to that of either challenger or claimer, the chain can decide which party is gaming. Partial re-execution is not costly since the chain only needs to execute the basic block with dispute, which is usually a few simple instructions. A potential future work would be replacing this process with zero-knowledge proof.
 
-
+# What Invariant it detects
 
 # 🔥 Roadmap
 - Allowing project owners to define their own types of vulnerabilities (e.g., business logic violations). 
