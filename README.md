@@ -8,7 +8,7 @@ Gecko is a DAO on the Solana network, which uses crowd-sourced computing for  *
 
 It enables anyone to audit projects by contributing computing power and rewards contributors with $FUZL tokens. Gecko is the first formal verification-assisted fuzzer for Solana, capable of automatically detecting and exploiting vulnerabilities in on-chain contracts.
 
-As Solana's first formal verification assisted fuzzer it eliminates manual effort by removing the need for users to write invariants or specify input generation strategies. Users simply provide compiled contracts and Gecko autonomously detects and generates exploits for any vulnerabilities found.
+As **Solana's first formal verification assisted fuzzer** it eliminates manual effort by removing the need for users to write invariants or specify input generation strategies. Users simply provide compiled contracts and Gecko autonomously detects and generates exploits for any vulnerabilities found.
 
 # Overview
 The importance of auditing has grown significantly however we don’t have a solution to combat cyberattacks at the speed and scale necessary. Human auditors face issues like high costs, potential for errors and slow processing, which becomes less practical as systems grow more complex. And automated solutions often demand significant computational resources and can compromise thoroughness for speed.
