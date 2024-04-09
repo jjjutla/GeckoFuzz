@@ -2,9 +2,9 @@
 
 Gecko is a DAO on the Solana network, which uses crowd-sourced computing for  **fast**, **accurate** and **cheap** automated auditing through a decentralised fuzzing infrastructure.
 
-<div style="text-align: center;">
-    <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/0a7b965d-8c04-41ea-8065-40d431270dc0" width="16%" height="16%">
-</div>
+<p align="center">
+  <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/0a7b965d-8c04-41ea-8065-40d431270dc0" width="16%" height="16%">
+</p>
 
 
 
