@@ -102,6 +102,34 @@ Verifying partition plans and interesting test cases can be costly or even impos
 
 # What Invariant it detects
 
+# Testing
+
+
+### Staging Environment:
+
+```
+stats-backend: https://stats-api-stg.geckofuzz.com
+telemetry-backend: https://telemetry-grpc-gw-stg.geckofuzz.com
+ipfs-gateway: https://ipfs.geckofuzz.com
+frontend: https://stg.geckofuzz.com
+
+```
+
+### Deploy Backend & Frontend
+```
+gcloud container clusters get-credentials gecko-1 --region us-central1-a
+# use AMD machine to build, otherwise it breaks k8s on gcp
+./build_images.sh
+kubectl get deployment
+```
+
+### Ingress
+```
+kubectl expose deployment [NAME] --port=[SRC_PORT] --target-port=[DST_PORT]
+vim deploy/nginx-ingress/ingress.yaml
+kubectl apply -f deploy/nginx-ingress/ingress.yaml
+```
+
 # 🔥 Roadmap
 - Allowing project owners to define their own types of vulnerabilities (e.g., business logic violations). 
 - Bring in ZK-SNARKs for testcase sharing.
