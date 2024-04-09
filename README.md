@@ -17,9 +17,11 @@ Unlike traditional collaborative manual auditing platforms Gecko uses sound auto
 
 # Images
 
-<img width="1509" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/33a7799c-3d9a-4c3f-b086-d888f18e1903">
-![2](https://github.com/jjjutla/GeckoFuzz/assets/22000925/fc06f7b6-348b-4457-9174-3a752a992808)
-![3](https://github.com/jjjutla/GeckoFuzz/assets/22000925/bb4b64c7-4e9b-4153-b0cc-314c93a83498)
+<img width="30%" alt="1" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/33a7799c-3d9a-4c3f-b086-d888f18e1903">
+<img width="30%" alt="2" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/fc06f7b6-348b-4457-9174-3a752a992808">
+<img width="30%" alt="3" src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/bb4b64c7-4e9b-4153-b0cc-314c93a83498">
+
+
 
 
 # Project Details
