@@ -136,6 +136,10 @@ kubectl apply -f deploy/nginx-ingress/ingress.yaml
 - UI Redesign
 
 ### Coming Soon
-<img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/a461800a-4bd6-4e65-896b-b45924ce944f" width="200%">
+
+<p align="center">
+  <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/a461800a-4bd6-4e65-896b-b45924ce944f" width="26%" height="26%">
+</p>
+
 
 
