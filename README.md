@@ -138,7 +138,7 @@ kubectl apply -f deploy/nginx-ingress/ingress.yaml
 ### Coming Soon
 
 <p align="center">
-  <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/a461800a-4bd6-4e65-896b-b45924ce944f" width="100" >
+  <img src="https://github.com/jjjutla/GeckoFuzz/assets/22000925/a461800a-4bd6-4e65-896b-b45924ce944f" width="100%" >
 </p>
 
 
